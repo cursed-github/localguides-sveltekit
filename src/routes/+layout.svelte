@@ -25,7 +25,7 @@
 </script>
 
 
-<Navbar let:hidden let:toggle navClass='border-b-none' class='dark:bg-gray-900 border-0' navDivClass='mx-auto flex flex-wrap md:flex-nowrap justify-between items-center'>
+<Navbar let:hidden let:toggle navClass='border-b-none bg-gradient-to-r from-white to-teal-200 dark:bg-none dark:bg-blue-950 border-0' navDivClass='mx-auto flex flex-wrap md:flex-nowrap justify-between items-center'>
     <div class="flex my-2 items-center">
         <NavBrand class="" href="/">
             <img
