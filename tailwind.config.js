@@ -10,6 +10,9 @@ const config = {
 
   theme: {
     extend: {
+      fontSize: {
+        xsm: "0.6rem",
+      },
       colors: {
         // flowbite-svelte
         primary: {

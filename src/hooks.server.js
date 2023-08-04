@@ -22,7 +22,6 @@ export const handle = async ({ event, resolve }) => {
     return session;
   };
 
-  console.log("from hook", await event.locals.supabase.auth.getSession());
   return resolve(event, {
     filterSerializedResponseHeaders(name) {
       return name === "content-range";

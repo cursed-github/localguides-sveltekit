@@ -28,8 +28,13 @@ export const actions = {
     // @ts-ignore
     let { data, error } = await supabase.auth.signUp({
       email,
-      phone,
       password,
+      options: {
+        data: {
+          first_name: data1.get("name"),
+          phone,
+        },
+      },
     });
 
     if (error) {

@@ -10,16 +10,16 @@ export const actions = {
     const phone = data1.get("phone");
 
     // @ts-ignore
-    let { data, error } = await locals.supabase.auth.signInWithPassword({
+    let { data, erro: err } = await locals.supabase.auth.signInWithPassword({
       email,
       password,
     });
-    console.log("from login page server", locals.getSession);
+    if (err) console.log(err);
+    console.log(data);
     throw redirect(303, "/account");
   },
 
   logout: async ({ locals, request }) => {
-    console.log("logout completed");
     let { error } = await locals.supabase.auth.signOut();
     throw redirect(303, "/login");
   },
