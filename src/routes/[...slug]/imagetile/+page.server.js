@@ -16,7 +16,7 @@ export const load = async ({ locals, params }) => {
 
   const result = await upsplash.search.getPhotos({
     query: paramArr[0],
-    per_page: "30",
+    per_page: "16",
     orientation: "landscape",
   });
 
@@ -32,15 +32,16 @@ export const actions = {
     const image_author = data.get("author");
     const image_author_link = data.get("author_link");
     fetch(data.get("download_link"));
-    const id = params.slug.split("/")[1];
+    const place_id = params.slug.split("/")[1];
     const { return_data, error: err } = await locals.supabase
       .from("places")
-      .update({
-        hero_image,
-        hero_image_author,
-        hero_image_author_link,
-      })
-      .eq("id", id);
+      .insert({
+        place_id,
+        image_url,
+        image_author,
+        image_author_link,
+      });
+
     if (err == null) throw redirect(303, "/");
   },
 };

@@ -9,8 +9,8 @@
 </script>
 
 
-<body class="">
-    <div class="pt-10 flex min-h-screen justify-center mx-auto bg-gradient-to-r from-white to-cyan-200 dark:bg-gradient-to-b dark:h-screen dark:from-blue-950 dark:via-emerald-600 dark:to-blue-950">
+<body data-sveltekit-preload-data="tap">
+    <div class="pt-10 flex min-h-screen justify-center mx-au">
         <div class=" grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3  2xl:grid-cols-4 auto-rows-max justify-stretch">
             
             {#each data.places as arra}

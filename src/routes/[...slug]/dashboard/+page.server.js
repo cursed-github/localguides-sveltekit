@@ -18,6 +18,7 @@ export const load = async ({ locals, params }) => {
     query: paramArr[0],
     per_page: "30",
     orientation: "landscape",
+    page: 1,
   });
 
   return {
@@ -31,7 +32,12 @@ export const actions = {
     const hero_image = data.get("url");
     const hero_image_author = data.get("author");
     const hero_image_author_link = data.get("author_link");
-    fetch(data.get("download_link"));
+    console.log(data.get("download_link"));
+    const returnd = await upsplash.photos.trackDownload({
+      downloadLocation: data.get("download_link"),
+    });
+    console.log(returnd);
+
     const id = params.slug.split("/")[1];
     const { return_data, error: err } = await locals.supabase
       .from("places")

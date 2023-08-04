@@ -5,7 +5,7 @@
 
 
 
-<body class='bg-gradient-to-b from-white to-teal-400 dark:bg-gradient-to-t dark:from-blue-600 dark:to-gray-900 transition-colors duration-1000 antialiased'>
+<body class=''>
     <div class='flex justify-center h-screen items-center'>
         <Card color='none' class="border-0 bg-gradient-to-b from-white to-orange-300 ">
             <form method="POST" action="?/login">

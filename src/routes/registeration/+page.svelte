@@ -7,7 +7,7 @@
 
 
 
-<body class='bg-gradient-to-b from-white to-orange-400 dark:bg-gradient-to-r dark:from-purple-900 dark:to-pink-900'>
+<body class=''>
     <div class='flex justify-center h-screen items-center'>
         <Card class="dark:bg-gray-800">
             
