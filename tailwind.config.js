@@ -4,7 +4,7 @@ const config = {
     "./node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}",
   ],
 
-  plugins: [require("flowbite/plugin")],
+  plugins: [require("flowbite/plugin"), require("@tailwindcss/typography")],
 
   darkMode: "class",
 
@@ -12,6 +12,10 @@ const config = {
     extend: {
       fontSize: {
         xsm: "0.6rem",
+      },
+      fontFamily: {
+        fancy: "'Playfair Display', serif",
+        fancy2: "'Lato', sans-serif",
       },
       colors: {
         // flowbite-svelte

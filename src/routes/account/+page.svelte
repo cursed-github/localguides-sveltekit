@@ -5,4 +5,3 @@
 	export let data;
 </script>
 
-hi

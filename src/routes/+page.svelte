@@ -16,15 +16,15 @@
             {#each data.places as arra}
 
             <button class='flex flex-col h-full w-full'>
-                <Card href='/{arra.city}/{arra.id}/dashboard' class='h-full w-full' padding='none'>
+                <Card href='/{arra.city}/{arra.id}' class='h-full w-full dark:bg-none'  padding='none'>
                     <div class="relative group">
                         <img src={arra.hero_image} alt="photo of {arra.city}" class='h-56 w-full rounded-t-lg'>
                         <div class="absolute bottom-0 right-1 text-white text-xsm opacity-0 group-hover:opacity-80 "> Upsplash | {arra.hero_image_author}</div>
                     </div>
-                    <div class="p-2 pb-0">
-                        <h5 class=" abosulte bottom-0 font-serif mb-1 text-2xl  tracking-tight text-gray-900 dark:text-white">Local Guides From {arra.city}, {arra.country}</h5>
+                    <div class="p-2 pb-2">
+                        <h5 class=" abosulte bottom-0 mb-1 text-2xl  tracking-tight text-gray-900 dark:text-white font-fancy">Local Guides From {arra.city}, {arra.country}</h5>
                     </div>
-                    <p class="mx-3 mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
+                    <p class="mx-3 mb-3  text-gray-700 dark:text-gray-400 leading-tight font-fancy">
                         <a href={arra.hero_image_author_link_}>{arra.hero_text}</a>
                     </p>
                 </Card>

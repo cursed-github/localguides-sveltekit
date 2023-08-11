@@ -2,26 +2,25 @@ import { upsplash } from "$lib/upsplashClient.js";
 import { redirect } from "@sveltejs/kit";
 
 export const load = async ({ locals, params }) => {
-  const user = await locals.getSession();
-  if (user == null) throw redirect(303, "/");
-  const userId = user?.user?.id;
-  let { data, error } = await locals.supabase
-    .from("profiles")
-    .select("*")
-    .eq("id", userId);
-
-  if (data[0].isAdmin != true) throw redirect(303, "/");
-
   const paramArr = params.slug.split("/");
-
   const result = await upsplash.search.getPhotos({
     query: paramArr[0],
-    per_page: "16",
+    per_page: "8",
     orientation: "landscape",
   });
 
+  let { data, error: err } = await locals.supabase
+    .from("places_guides")
+    .select("*")
+    .eq("place_id", paramArr[1]);
+
+  console.log(data);
+
   return {
     photos: result.response?.results,
+    city: paramArr[0],
+    country: "",
+    guides: data,
   };
 };
 
