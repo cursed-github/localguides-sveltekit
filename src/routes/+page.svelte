@@ -1,7 +1,6 @@
 <script>
   import { Card } from "flowbite-svelte";
   import logo from "$lib/shark.png";
-  import i1 from "$lib/stock/1.jpg";
   import { upsplash } from "$lib/upsplashClient.js";
   export let data;
   //console.log(data.places)
