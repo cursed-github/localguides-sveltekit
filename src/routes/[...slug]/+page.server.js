@@ -5,7 +5,7 @@ export const load = async ({ locals, params }) => {
   const paramArr = params.slug.split("/");
   const result = await upsplash.search.getPhotos({
     query: paramArr[0],
-    per_page: "8",
+    per_page: "4",
     orientation: "landscape",
   });
 
@@ -13,8 +13,6 @@ export const load = async ({ locals, params }) => {
     .from("places_guides")
     .select("*")
     .eq("place_id", paramArr[1]);
-
-  console.log(data);
 
   return {
     photos: result.response?.results,

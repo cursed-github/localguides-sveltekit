@@ -109,19 +109,15 @@
   const alignImage = (classToAdd) => {
     const elements = document.querySelectorAll(".ProseMirror-selectednode");
 
-    console.log(elements[0]);
-    console.log(elements[0].tagName);
-    console.log("hi");
     if (
       elements.length === 0 ||
       elements[0].tagName.toLocaleLowerCase() != "img"
     )
       return;
-    console.log(elements[0].classList);
+
     elements[0].classList.remove("float-left", "float-right", "mx-auto");
-    console.log(elements[0].classList);
+
     elements[0].classList.add(classToAdd);
-    console.log(elements[0].classList);
   };
 </script>
 

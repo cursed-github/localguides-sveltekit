@@ -1,9 +1,9 @@
-ul {
+.html-wrapper ul {
   padding: 0 1rem;
   list-style-type: disc; /* Bullet points for unordered lists */
 }
 
-ol {
+.html-wrapper ol {
   padding: 0 1rem;
   list-style-type: decimal; /* Numbers for ordered lists */
 }
@@ -21,7 +21,7 @@ h6 {
   line-height: 1.1;
 }
 
-code {
+.html-wrapper code {
   background-color: rgba(#616161, 0.1);
   padding: 4;
   color: #616161;
@@ -46,18 +46,18 @@ pre code {
   font-size: 0.8rem;
 }
 
-blockquote {
+.html-wrapper blockquote {
   padding-left: 1rem;
   border-left: 2px solid rgba(#0d0d0d, 0.1);
 }
 
-hr {
+.html-wrapper hr {
   border: none;
   border-top: 2px solid rgba(#0d0d0d, 0.1);
   margin: 2rem 0;
 }
 
-button {
+.html-wrapper button {
   border: 2px solid #007bff; /* 2px solid black border */
   padding: 5px 10px; /* Optional padding for aesthetics */
   margin: 1px; /* Optional margin to separate the buttons */

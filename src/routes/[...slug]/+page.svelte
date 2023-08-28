@@ -4,21 +4,10 @@
   const hrefeditor = $page.url + "/editor";
 
   export let data;
-
-  // const photos = data.photos?.map((photo)=>({
-  //     src:photo.urls.regular
-  // }))
-  // console.log(photos)
-  // let chunks = [];
-  // for (let i = 0; i < photos.length; i += 4) {
-  //     chunks.push(photos.slice(i, i + 4));
-  // }
-  // console.log(chunks);
-  //import Masonry from 'masonry-layout';
 </script>
 
-<body class="relative">
-  <div class="flex justify-center mx-auto md:w-1/2 md:h-1/2 relative">
+<body class="relative max-w-screen-xl mx-auto">
+  <div class="flex justify-center mx-auto md:w-full relative">
     <div class="grid grid-cols-4 gap-0">
       {#each data.photos as photo}
         <img
@@ -30,7 +19,7 @@
     </div>
 
     <h1
-      class="absolute inset-0 flex justify-center items-center text-white text-9xl font-fancy"
+      class="absolute bottom-0 flex justify-center items-center text-white text-9xl font-fancy"
     >
       {data.city}
     </h1>
@@ -38,7 +27,7 @@
 
   <div class="flex justify-center my-9">
     <div
-      class="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 auto-rows-max justify-stretch"
+      class="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 auto-rows-max justify-stretch"
     >
       {#each data.guides as guide}
         <Card padding="none" href={$page.url + "/" + guide.id + "/guides"}>
@@ -77,7 +66,7 @@
     </div>
   </div>
 
-  <Button href={hrefeditor} class="absolute bottom-4 right-4">
+  <Button href={hrefeditor} class="fixed bottom-4 right-4">
     Write your own guide</Button
   >
 </body>

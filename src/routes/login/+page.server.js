@@ -28,6 +28,7 @@ export const actions = {
     const { data, error: err } = await locals.supabase.auth.signInWithOAuth({
       provider,
     });
+    console.log(data, err);
     throw redirect(303, data.url);
   },
 };

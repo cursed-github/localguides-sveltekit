@@ -26,7 +26,7 @@ export const actions = {
     console.log(phone);
 
     // @ts-ignore
-    let { data, error } = await supabase.auth.signUp({
+    let { data, error: err } = await supabase.auth.signUp({
       email,
       password,
       options: {
@@ -37,12 +37,8 @@ export const actions = {
       },
     });
 
-    if (error) {
-      return fail(500, {
-        message: "Server error. Try again later.",
-        success: false,
-        email,
-      });
+    if (err) {
+      console.log(err);
     }
 
     return {

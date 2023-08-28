@@ -1,11 +1,13 @@
 export const actions = {
   getHTML: async ({ locals, request, params, fetch }) => {
     const data = await request.formData();
-    console.log(data.get("content"));
+    const user = await locals.getSession();
+    if (user == null) throw redirect(303, "/");
+    const author_id = user?.user?.id;
 
     const htmltext = data.get("content");
     const place_id = params.slug.split("/")[1];
-    const author_id = 1;
+    //const author_id = "fhjk";
     const title = "dfs";
     const paragraph = "xyz";
     const hero_image = "xyz";
@@ -22,7 +24,5 @@ export const actions = {
           hero_image,
         },
       ]);
-
-    console.log(err, return_data);
   },
 };
